@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'teacher_menu.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <span class="user-badge teacher">Преподаватель</span>
+                <h2>Кабинет Учителя</h2>
+            </div>
+            <div class="card-body">
+                <div class="list-item">
+                    <span>🏫 Список классов</span>
+                    <a href="#" class="view-link">Открыть</a>
+                </div>
+                
+                <div class="list-item">
+                    <span>👥 Список учителей</span>
+                    <a href="#" class="view-link">Просмотр</a>
+                </div>
+
+                <hr>
+                <button class="btn-danger">Выход</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <div class="manage-container">
+        <h2 class="class-title">Новый ученик в {{ class.class_name }}</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="first_name" placeholder="Имя" class="search-input" style="width: 300px; margin-bottom: 20px;" required>
+            <input type="text" name="last_name" placeholder="Фамилия" class="search-input" style="width: 300px; margin-bottom: 20px;" required>
+            <input type="text" name="username" placeholder="Логин" class="search-input" style="width: 300px; margin-bottom: 20px;" required>
+            <input type="password" name="password" placeholder="Пароль" class="search-input" style="width: 300px; margin-bottom: 20px;" required>
+            <button type="submit" class="btn btn-add"><a href="{% url 'manage_class' class_id=class_id %}">Сохранить</a></button>
+            <a href="{% url 'manage_class' class_id=class_id %}" class="btn">Отмена</a>
+        </form>
+    </div>
+    {% endblock %}
+</body>
+</html>

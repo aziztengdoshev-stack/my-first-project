@@ -1,0 +1,44 @@
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/manage_class.css' %}">
+
+<div class="manage-container">
+     <div class="back-nav">
+        <a href="{% url 'classes_list' %}" class="back-link">← Назад</a>
+    </div>
+    <header class="class-header">
+        <h1 class="class-title">{{ class.class_name }}</h1>
+        
+        <div class="action-bar">
+            <div class="main-actions">
+                <a href="{% url 'add_student' class_id=class.id %}" class="btn btn-add">добавить ученика</a>
+                <a href="{% url 'edit_class' class_id=class.id %}" class="btn btn-edit">изменить</a>
+                <a href="{% url 'delete_class' class_id=class.id %}" 
+                    class="btn btn-delete" 
+                    onclick="return confirm('Ты уверен, что хочешь удалить этот класс?')">
+                    удалить
+                </a>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" placeholder="ПОИСК" class="search-input">
+            </div>
+        </div>
+    </header>
+
+    <hr class="separator">
+
+    <main class="students-section">
+        <div class="students-grid">
+            {% for student in students %}
+                <div class="student-card">
+                    <span class="student-name">{{ student.name }}</span>
+                </div>
+            {% empty %}
+                <p class="empty-msg">В этом классе пока нет учеников.</p>
+            {% endfor %}
+        </div>
+    </main>
+</div>
+{% endblock %}

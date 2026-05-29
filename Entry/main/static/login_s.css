@@ -1,0 +1,113 @@
+body {
+    background: radial-gradient(circle at top, #fdfdfd, #ebedef);
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.login-head {
+    background: linear-gradient(135deg, #2b3a8c 0%, #1a235e 100%);
+    padding: 35px 25px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.login-head h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.back-link {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    color: #fff;
+}
+
+.login-form {
+    padding: 30px 40px;
+}
+
+.input-field {
+    margin-bottom: 20px;
+}
+
+.input-field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #edf2f7;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.input-field input:focus {
+    border-color: #2b3a8c;
+    box-shadow: 0 0 0 4px rgba(43, 58, 140, 0.1);
+}
+
+.btn-action {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(to right, #8ec63f, #72a32c);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(114, 163, 44, 0.3);
+    transition: 0.3s;
+}
+
+.btn-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(114, 163, 44, 0.4);
+}
+
+.login-extra {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8fafc;
+    font-size: 13px;
+    color: #718096;
+}
+
+.login-extra a {
+    color: #2b3a8c;
+    font-weight: 600;
+    text-decoration: none;
+}

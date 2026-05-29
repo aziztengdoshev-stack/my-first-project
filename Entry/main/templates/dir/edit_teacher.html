@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="info-box">
+            <div style="margin-bottom: 15px;">
+                <label>ИМЯ</label>
+                <!-- Атрибут value подставит текущее имя из базы -->
+                <input type="text" name="first_name" value="{{ teacher.first_name }}" required>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <label>ФАМИЛИЯ</label>
+                <input type="text" name="last_name" value="{{ teacher.last_name }}" required>
+            </div>
+
+            <div>
+                <label>ЛОГИН</label>
+                <input type="text" name="username" value="{{ teacher.username }}" required>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <button type="submit" class="btn btn-main">Сохранить изменения</button>
+            <a href="{% url 'manage_teacher' teacher.id %}" class="btn btn-back">Отмена</a>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список классов</title>
+    <link rel="stylesheet" href="{% static 'css/classes_list.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="header-actions">
+            <a href="{% url 'dir/menu' %}" class="btn">← Назад</a>
+            <a href="{% url 'add_class' %}" class="btn btn-add">+ Добавить новый класс</a>
+        </div>
+
+        <h1>Список классов</h1>
+
+        <div class="grid">
+            {% for cls in classes %}
+                <!-- Оборачиваем кнопку в ссылку, передаем ID класса -->
+                <a href="{% url 'manage_class' class_id=cls.id %}" style="text-decoration: none;">
+                    <button type="button" class="class-btn">
+                        {{ cls.class_name }}
+                    </button>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

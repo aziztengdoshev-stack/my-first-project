@@ -1,0 +1,85 @@
+/* Основной контейнер */
+.manage-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #eee;
+}
+
+/* Шапка */
+.class-header {
+    margin-bottom: 20px;
+}
+
+.class-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #00ff00; /* Твой любимый зеленый */
+    text-transform: uppercase;
+}
+
+/* Панель действий */
+.action-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.main-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 12px 20px;
+    border: 2px solid #555;
+    background: #1a1a1a;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    border-color: #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+/* Поиск */
+.search-input {
+    padding: 12px;
+    background: #111;
+    border: 2px solid #555;
+    color: #00ff00;
+    width: 250px;
+}
+
+.separator {
+    border: 0;
+    height: 2px;
+    background: #333;
+    margin: 30px 0;
+}
+
+/* Сетка учеников */
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.student-card {
+    padding: 20px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.student-card:hover {
+    border-color: #00ff00;
+    transform: translateY(-3px);
+}

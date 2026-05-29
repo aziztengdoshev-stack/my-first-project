@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <div class="manage-container">
+        <h2 class="class-title">Изменить данные класса</h2>
+        
+        <form method="POST">
+            {% csrf_token %}
+            <label style="color: #888;">Название класса:</label>
+            <input type="text" name="class_name" value="{{ class.class_name }}" class="search-input" style="width: 100px; margin-bottom: 20px;" required>
+            
+            <div class="main-actions">
+                <button type="submit" class="btn btn-add">Сохранить изменения</button>
+                <a href="{% url 'manage_class' class_id=class.id %}" class="btn">Отмена</a>
+            </div>
+        </form>
+    </div>
+    {% endblock %}
+</body>
+</html>

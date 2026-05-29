@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'login_s.css' %}">
+</head>
+<body>
+    <div class="login-box">
+        <div class="login-head">
+            <a href="{% url 'enter_rol' %}" class="back-link">← Назад</a>
+            <h2>Вход для учеников</h2>
+        </div>
+
+        <form class="login-form" method="POST">
+            {% csrf_token %}
+            <div class="input-field">
+                <label>ID Ученика</label>
+                <input type="text" name="username" placeholder="Ваш ID или логин" required>
+            </div>
+
+            <div class="input-field">
+                <label>Секретный код</label>
+                <input type="password" name="password" placeholder="Пароль из дневника" required>
+            </div>
+
+            <button type="submit" class="btn-action">Открыть дневник</button>
+        </form>
+
+    </div>
+</body>
+</html>

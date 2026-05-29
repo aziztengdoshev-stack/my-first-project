@@ -1,0 +1,38 @@
+/* Доска оценок */
+.grades-dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.grade-item {
+    background: #f0f7ff;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #dbeafe;
+}
+
+.grade-item span {
+    display: block;
+    font-size: 10px;
+    color: #4a5568;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.grade-val {
+    font-size: 20px !important;
+    font-weight: 800;
+    color: #2b3a8c !important;
+}
+
+.section-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #a0aec0;
+    margin: 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+}

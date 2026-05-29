@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль сотрудника</title>
+    <style>
+        body { 
+            background-color: #f0f2f5; 
+            color: #3b4256; 
+            font-family: 'Open Sans', sans-serif; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            margin: 0;
+        }
+        .container {
+            background: #fff;
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 1px solid #e1e4e8;
+        }
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background-color: #edf2ff;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* Иконка портфеля (emoji или картинка) */
+        .icon-circle span { font-size: 35px; }
+
+        h2 { 
+            color: #2d3e50; 
+            font-size: 22px; 
+            margin-bottom: 10px; 
+            font-weight: 600;
+        }
+        .description {
+            color: #7a8294;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+        .info-box {
+            text-align: left;
+            background: #f8f9fb;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        .info-label { color: #8c94a3; }
+        .info-value { font-weight: 600; color: #2d3e50; }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .btn {
+            padding: 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.2s;
+            cursor: pointer;
+            border: 1px solid #d1d5db;
+        }
+        .btn-main {
+            background-color: #fff;
+            color: #4c6ef5;
+            border-color: #4c6ef5;
+        }
+        .btn-main:hover { background-color: #f0f3ff; }
+        .btn-back {
+            background-color: transparent;
+            color: #7a8294;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="icon-circle">
+            <span>💼</span>
+        </div>
+
+        <h2>{{ teacher.first_name }} {{ teacher.last_name }}</h2>
+        <p class="description">Профиль сотрудника образовательной организации</p>
+
+        <div class="info-box">
+            <div class="info-row">
+                <span class="info-label">Логин:</span>
+                <span class="info-value">{{ teacher.username }}</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">ID:</span>
+                <span class="info-value">#{{ teacher.id }}</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Доступ:</span>
+                <span class="info-value" style="color: #27ae60;">Активен</span>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <a href="{% url 'edit_teacher' teacher.id %}" class="btn btn-main" style="background-color: #fff; color: #4c6ef5; border-color: #4c6ef5;">Редактировать профиль</a>
+            <a href="{% url 'delete_teacher' teacher.id %}" 
+            class="btn" 
+            style="background-color: #fff; color: #e74c3c; border-color: #e74c3c; margin-top: 10px;"
+            onclick="return confirm('Вы уверены, что хотите удалить этого учителя?')">
+            Удалить учителя
+            </a>
+            <a href="{% url 'teachers_list' %}" class="btn btn-back" style="margin-top: 10px; display: block; border: 1px solid #d1d5db; background: transparent; color: #7a8294;">Назад к списку</a>
+        </div>
+    </div>
+
+</body>
+</html>

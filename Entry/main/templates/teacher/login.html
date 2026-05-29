@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'login_s.css' %}">
+</head>
+<body>
+    <div class="login-box">
+        <div class="login-head">
+            <a href="{% url 'enter_rol' %}" class="back-link">← Назад</a>
+            <h2>Вход для учителей</h2>
+        </div>
+
+        <form class="login-form" method="POST">
+            {% csrf_token %}
+            <div class="input-field">
+                <label>Имя пользователя</label>
+                <input type="text" name="login" placeholder="Введите логин" required>
+            </div>
+
+            <div class="input-field">
+                <label>Пароль</label>
+                <input type="password" name="password" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="btn-action">Войти в кабинет</button>
+        </form>
+
+        <div class="login-extra">
+            Проблемы со входом? <a href="#">Служба поддержки</a>
+        </div>
+    </div>
+</body>
+</html>

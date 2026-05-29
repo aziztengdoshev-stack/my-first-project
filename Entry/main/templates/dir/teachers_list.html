@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <a href="{% url 'dir/menu' %}" class="back-link">← Меню</a>
+                <h2>Список учителей</h2>
+            </div>
+            <div class="card-body">
+                <div class="scroll-area">
+                    {% for t in teachers %}
+                    {% url 'manage_teacher' t.id as teacher_url %}
+                    <div class="list-item" onclick="location.href='{{ teacher_url }}'" style="cursor:pointer;">
+                        <!-- Заменили t.fio на first_name и last_name -->
+                        <span><strong>{{ t.first_name }} {{ t.last_name }}</strong> ({{ t.username }})</span>
+                        <span class="view-link">Выбрать →</span>
+                    </div>
+                    {% empty %}
+                    <p style="text-align:center; color:#aaa;">Учителей пока нет</p>
+                    {% endfor %}
+                </div>
+                <hr>
+                <a href="{% url 'add_teacher_url' %}" class="btn-main" style="text-decoration: none; display: inline-block; text-align: center;">
+                    + Добавить учителя
+                </a>    
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'student_menu.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <span class="user-badge student">Ученик: 8-"Д" класс</span>
+                <h2>Мой Кабинет</h2>
+            </div>
+            
+            <div class="card-body">
+                <h3 class="section-title">Твои последние оценки</h3>
+                <div class="grades-dashboard">
+                    <div class="grade-item">
+                        <span>Алгебра</span>
+                        <span class="grade-val">5</span>
+                    </div>
+                    <div class="grade-item">
+                        <span>Русский язык</span>
+                        <span class="grade-val">4</span>
+                    </div>
+                    <div class="grade-item">
+                        <span>Информатика</span>
+                        <span class="grade-val">5</span>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="list-item">
+                    <span>👥 Мой класс</span>
+                    <a href="#" class="view-link">Посмотреть</a>
+                </div>
+
+                <div class="list-item">
+                    <span>📅 Расписание</span>
+                    <a href="#" class="view-link">Открыть</a>
+                </div>
+
+                <button class="btn-danger">Выход</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

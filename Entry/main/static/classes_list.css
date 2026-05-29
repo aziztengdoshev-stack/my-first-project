@@ -1,0 +1,36 @@
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #000; /* Черный фон для контраста */
+}
+
+.class-btn {
+    /* Делаем их большими */
+    min-width: 160px;
+    min-height: 90px;
+    
+    /* Цвета */
+    background-color: #1a1a1a; 
+    color: #00ff00; /* Ярко-зеленый текст, как в коде */
+    
+    /* Границы */
+    border: 3px solid #00ff00;
+    border-radius: 12px;
+    
+    /* Текст */
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+    
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.class-btn:hover {
+    background-color: #00ff00;
+    color: #000;
+    box-shadow: 0 0 15px #00ff00; /* Эффект свечения */
+    transform: scale(1.05);
+}

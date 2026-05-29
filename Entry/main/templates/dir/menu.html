@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'dir_menu.css' %}">
+</head>
+<body>
+    <div class="card-body">
+        <h3 class="section-title">С чем работаем?</h3>
+        <button class="btn-main" onclick="location.href='{% url 'classes_list' %}'">
+            📁 Список классов
+        </button>
+        <button class="btn-main" onclick="location.href='{% url 'teachers_list' %}'">
+            👨‍🏫 Список учителей
+        </button>
+        <hr>
+        <button class="btn-danger" onclick="location.href='{% url 'logout' %}'">Выход</button>
+    </div>
+    <div class="content-area">
+        {% block content %}
+        <!-- Здесь ничего не пиши, сюда придут данные из других файлов -->
+        {% endblock %}
+    </div>
+</body>
+</html>
